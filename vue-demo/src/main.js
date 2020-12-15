@@ -14,7 +14,7 @@ const initOptions = {
 
 const keycloak = Keycloak(initOptions)
 
-keycloak.init({ onLoad: initOptions.onLoad, promiseType: 'native' }).then((authenticated) =>{
+keycloak.init({ onLoad: initOptions.onLoad, promiseType: 'native', checkLoginIframe: false }).then((authenticated) =>{
   if(!authenticated) {
     window.location.reload();
   } else {
